@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
     video.loop = false;
 	// Play the video and update the volume information. Change the volume based on the slider and update the volume information.
     function updateVolume() {
-        volumeSpan.textContent = volumePercent + "%";
+        volumeSpan.textContent = "%" + volumePercent;
     }
     volumeSlider.addEventListener('input', function() {
         video.volume = volumeSlider.value / 100;
