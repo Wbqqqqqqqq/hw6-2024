@@ -11,7 +11,6 @@ window.addEventListener('load', function() {
 	var speedUpButton = document.getElementById('faster');
 	var skipButton = document.getElementById('skip');
 	var muteButton = document.getElementById('mute');
-	var pauseButton = document.getElementById('pause');
 	var oldSchoolButton = document.getElementById('vintage');
 	var originalButton = document.getElementById('orig');
 	// Initialize the video element and turn off autoplay and turn off looping.
@@ -19,8 +18,7 @@ window.addEventListener('load', function() {
     video.loop = false;
 	// Play the video and update the volume information. Change the volume based on the slider and update the volume information.
     function updateVolume() {
-        var volumePercent = Math.round(video.volume * 100);
-        volumeSpan.textContent = "%" + volumePercent;
+        volumeSpan.textContent = volumeSlider.value + '%';
     }
     volumeSlider.addEventListener('input', function() {
         video.volume = volumeSlider.value / 100;
