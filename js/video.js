@@ -7,7 +7,6 @@ window.addEventListener('load', function() {
 	var playButton = document.getElementById('play');
     var volumeSpan = document.getElementById('volume');
     var volumeSlider = document.getElementById('slider');
-	var volumePercent = Math.round(video.volume * 100);
 	var slowDownButton = document.getElementById('slower');
 	var speedUpButton = document.getElementById('faster');
 	var skipButton = document.getElementById('skip');
@@ -20,6 +19,7 @@ window.addEventListener('load', function() {
     video.loop = false;
 	// Play the video and update the volume information. Change the volume based on the slider and update the volume information.
     function updateVolume() {
+        var volumePercent = Math.round(video.volume * 100);
         volumeSpan.textContent = "%" + volumePercent;
     }
     volumeSlider.addEventListener('input', function() {
