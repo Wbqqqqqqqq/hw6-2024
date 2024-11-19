@@ -3,22 +3,24 @@ window.addEventListener("load", function() {
 });
 
 window.addEventListener('load', function() {
-	var video = document.getElementById('player1');
-	var playButton = document.getElementById('play');
-    var volumeSpan = document.getElementById('volume');
-    var volumeSlider = document.getElementById('slider');
-	var slowDownButton = document.getElementById('slower');
-	var speedUpButton = document.getElementById('faster');
-	var skipButton = document.getElementById('skip');
-	var muteButton = document.getElementById('mute');
-	var oldSchoolButton = document.getElementById('vintage');
-	var originalButton = document.getElementById('orig');
+    var video = document.getElementById("player1");
+    var playButton = document.getElementById("play");
+    var pauseButton = document.getElementById("pause");
+    var volumeSpan = document.getElementById("volume");
+    var volumeSlider = document.getElementById("slider");
+    var slowDownButton = document.getElementById("slower");
+    var speedUpButton = document.getElementById("faster");
+    var skipButton = document.getElementById("skip");
+    var muteButton = document.getElementById("mute");
+    var oldSchoolButton = document.getElementById("vintage");
+    var originalButton = document.getElementById("orig");
 	// Initialize the video element and turn off autoplay and turn off looping.
     video.autoplay = false;
     video.loop = false;
 	// Play the video and update the volume information. Change the volume based on the slider and update the volume information.
     function updateVolume() {
-        volumeSpan.textContent = volumeSlider.value + '%';
+        var volumePercent = Math.round(video.volume * 100);
+        volumeSpan.textContent = volumePercent + "%";
     }
     volumeSlider.addEventListener('input', function() {
         video.volume = volumeSlider.value / 100;
